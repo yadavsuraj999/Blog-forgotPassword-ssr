@@ -28,7 +28,6 @@ const signinUser = async (req, res) => {
     try {
         const { userEmail, userPassword } = req.body;
         const loginUser = await UserModel.findOne({ userEmail })
-        console.log(loginUser)
         if (!loginUser) {
             return res.send("Invalid Email or Password");
         }
